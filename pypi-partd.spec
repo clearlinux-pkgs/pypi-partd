@@ -4,7 +4,7 @@
 #
 Name     : pypi-partd
 Version  : 1.2.0
-Release  : 30
+Release  : 31
 URL      : https://files.pythonhosted.org/packages/9c/b4/3674cd02e2b198a50cea6b73c899ee3176004d28f52556093aefadf69b8a/partd-1.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/9c/b4/3674cd02e2b198a50cea6b73c899ee3176004d28f52556093aefadf69b8a/partd-1.2.0.tar.gz
 Summary  : Appendable key-value storage
@@ -13,11 +13,8 @@ License  : BSD-3-Clause
 Requires: pypi-partd-license = %{version}-%{release}
 Requires: pypi-partd-python = %{version}-%{release}
 Requires: pypi-partd-python3 = %{version}-%{release}
-Requires: locket
+Requires: pypi(locket)
 BuildRequires : buildreq-distutils3
-Provides: partd
-Provides: partd-python
-Provides: partd-python3
 BuildRequires : pypi(locket)
 BuildRequires : pypi(toolz)
 
@@ -81,7 +78,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641465955
+export SOURCE_DATE_EPOCH=1641838034
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
