@@ -4,7 +4,7 @@
 #
 Name     : pypi-partd
 Version  : 1.2.0
-Release  : 33
+Release  : 34
 URL      : https://files.pythonhosted.org/packages/9c/b4/3674cd02e2b198a50cea6b73c899ee3176004d28f52556093aefadf69b8a/partd-1.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/9c/b4/3674cd02e2b198a50cea6b73c899ee3176004d28f52556093aefadf69b8a/partd-1.2.0.tar.gz
 Summary  : Appendable key-value storage
@@ -81,7 +81,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1656389647
+export SOURCE_DATE_EPOCH=1656393029
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
