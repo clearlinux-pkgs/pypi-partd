@@ -4,7 +4,7 @@
 #
 Name     : pypi-partd
 Version  : 1.3.0
-Release  : 40
+Release  : 41
 URL      : https://files.pythonhosted.org/packages/40/27/aaf5dd27fd949e95279e829d2c838f5fde533395765966fe1e55004adf3b/partd-1.3.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/40/27/aaf5dd27fd949e95279e829d2c838f5fde533395765966fe1e55004adf3b/partd-1.3.0.tar.gz
 Summary  : Appendable key-value storage
@@ -17,6 +17,9 @@ Requires: pypi(locket)
 BuildRequires : buildreq-distutils3
 BuildRequires : pypi(locket)
 BuildRequires : pypi(toolz)
+# Suppress stripping binaries
+%define __strip /bin/true
+%define debug_package %{nil}
 
 %description
 PartD
@@ -65,15 +68,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1660316687
+export SOURCE_DATE_EPOCH=1672297241
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
@@ -90,7 +93,7 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-partd
-cp %{_builddir}/partd-%{version}/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-partd/395d3fcb94348847e3b7afbfbdae2adeb0d6ec00
+cp %{_builddir}/partd-%{version}/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-partd/395d3fcb94348847e3b7afbfbdae2adeb0d6ec00 || :
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
