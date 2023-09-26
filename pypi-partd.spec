@@ -4,10 +4,10 @@
 # Using build pattern: distutils3
 #
 Name     : pypi-partd
-Version  : 1.4.0
-Release  : 43
-URL      : https://files.pythonhosted.org/packages/9b/e5/d99a623103c664bb6a8702909b8abfeecbd54ee89b5efd9bdb5fa4a15cff/partd-1.4.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/9b/e5/d99a623103c664bb6a8702909b8abfeecbd54ee89b5efd9bdb5fa4a15cff/partd-1.4.0.tar.gz
+Version  : 1.4.1
+Release  : 44
+URL      : https://files.pythonhosted.org/packages/a5/39/d13decd99a0d7e4bdde3ede536237ddf08c8c69bcedb4784fa26de649b47/partd-1.4.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/a5/39/d13decd99a0d7e4bdde3ede536237ddf08c8c69bcedb4784fa26de649b47/partd-1.4.1.tar.gz
 Summary  : Appendable key-value storage
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -58,10 +58,10 @@ python3 components for the pypi-partd package.
 
 
 %prep
-%setup -q -n partd-1.4.0
-cd %{_builddir}/partd-1.4.0
+%setup -q -n partd-1.4.1
+cd %{_builddir}/partd-1.4.1
 pushd ..
-cp -a partd-1.4.0 buildavx2
+cp -a partd-1.4.1 buildavx2
 popd
 
 %build
@@ -69,15 +69,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681314153
+export SOURCE_DATE_EPOCH=1695742862
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
