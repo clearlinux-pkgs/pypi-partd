@@ -7,7 +7,7 @@
 #
 Name     : pypi-partd
 Version  : 1.4.2
-Release  : 49
+Release  : 50
 URL      : https://files.pythonhosted.org/packages/b2/3a/3f06f34820a31257ddcabdfafc2672c5816be79c7e353b02c1f318daa7d4/partd-1.4.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/b2/3a/3f06f34820a31257ddcabdfafc2672c5816be79c7e353b02c1f318daa7d4/partd-1.4.2.tar.gz
 Summary  : Appendable key-value storage
